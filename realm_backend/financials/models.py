@@ -1,5 +1,5 @@
 from django.db import models
-from tenants.models import Tenant
+from realm_backend.tenants.models import Tenant
 
 # The Account model represents a financial account (e.g., bank account, cash account)
 class Account(models.Model):

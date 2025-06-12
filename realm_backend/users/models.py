@@ -1,5 +1,5 @@
 from django.db import models
-from tenants.models import Tenant
+from realm_backend.tenants.models import Tenant
 
 # The UserProfile model extends Django's built-in User with additional fields
 # It supports distinguishing landlords, storing contact info, and managing tenants

@@ -38,11 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'financials',
-    'properties',
-    'tenants',
-    'receipts',
-    'users',
+    'realm_backend.financials',
+    'realm_backend.properties',
+    'realm_backend.tenants',
+    'realm_backend.receipts',
+    'realm_backend.users',
 ]
 
 MIDDLEWARE = [

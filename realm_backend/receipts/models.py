@@ -1,5 +1,5 @@
 from django.db import models
-from financials.models import Transaction
+from realm_backend.financials.models import Transaction
 
 def receipt_upload_to(instance, filename):
     # Custom file naming: receipts/YYYY-MM-DD_First_Last_transactionID.ext
