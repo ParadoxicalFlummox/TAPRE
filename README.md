@@ -17,19 +17,19 @@ REALM (Real Estate Asset & Land Manager) is an all-in-one property management su
 
 ## Planned Technology Stack
 - **Frontend**: React (web), React Native (mobile)
-- **Backend**: Node.js/Express or Python/Django
-- **Database**: PostgreSQL or MongoDB
+- **Backend**: Python/Django (modular apps: financials, properties, tenants, receipts, users)
+- **Database**: PostgreSQL
 - **Cloud Storage**: AWS S3 or similar for receipt/document management
 - **Integrations**: Real estate APIs for valuation, accounting APIs for financial tools
 
 ## Roadmap
 1. **MVP**: Core ledger, financial tracking, and receipt management
     - Set up Django backend and PostgreSQL integration
-    - Scaffold modular Django apps: properties, tenants, financials, receipts, users
-    - Implement REST API endpoints for CRUD operations
-    - Design and implement models for Account, Transaction, Category, Property, Tenant
-    - Enable file upload and storage for receipts
-    - Basic admin interface for data management
+    - Scaffold modular Django apps: properties, tenants, financials, receipts, users (all created and registered)
+    - Implement REST API endpoints for CRUD operations (planned)
+    - Design and implement models for Account, Transaction, Category, Property, Tenant, Receipt, UserProfile (all created)
+    - Enable file upload and storage for receipts (with custom file naming based on transaction and tenant)
+    - Basic admin interface for data management (all models registered)
 2. **Valuation Integration**: Real-time property value estimates
     - Integrate with real estate APIs for property valuation
     - Display valuation data in dashboard and reports

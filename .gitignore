@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Django
+*.log
+db.sqlite3
+media/
+staticfiles/
+
+# Environments
+venv/
+.env
+.env.*
+
+# VSCode
+.vscode/
+
+# macOS
+.DS_Store
+
+# Migrations cache
+**/migrations/__pycache__/
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# Other
+*.swp
+*.swo
+
+# Ignore local settings
+local_settings.py
