@@ -1,0 +1,4 @@
+# requirements.txt for REALM Django App
+Django>=5.2
+psycopg2-binary
+djangorestframework

@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: realm_db
+      POSTGRES_USER: realm_user
+      POSTGRES_PASSWORD: realm_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DEBUG=1
+      - DJANGO_DB_HOST=db
+      - DJANGO_DB_PORT=5432
+      - DJANGO_DB_NAME=realm_db
+      - DJANGO_DB_USER=realm_user
+      - DJANGO_DB_PASSWORD=realm_pass
+
+volumes:
+  postgres_data:
