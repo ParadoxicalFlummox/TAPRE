@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'realm_backend.tenants',
     'realm_backend.receipts',
     'realm_backend.users',
+    'realm_backend.assets',
 ]
 
 MIDDLEWARE = [
