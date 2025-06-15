@@ -1,112 +1,53 @@
-# REALM: Real Estate Asset & Land Manager
+# CARET: Charlie & Adam's Real Estate Toolkit
 
-REALM (Real Estate Asset & Land Manager) is an all-in-one property management suite designed for small landlords. The goal is to provide a comprehensive, easy-to-use platform for managing rental properties, tracking finances, and maximizing property value.
+CARET is an all-in-one real estate toolkit designed for small real estate investors and landlords. The mission is to maximize ROI, simplify operations, and empower users to grow their wealth with actionable insights, tax optimization, and seamless property management.
 
 ## Key Features
 
-- **Real-Time Property Valuation**: Instantly view up-to-date estimates of your property values using integrated market data.
-- **Financial Tracking**: Record income, expenses, and generate financial reports to simplify tax season and improve profitability.
-- **Receipt Management**: Upload, organize, and store receipts for all property-related expenses, making tax preparation easy and audit-proof.
-- **Marketing Tools** (Planned): Create listings, manage leads, and promote vacancies across multiple platforms.
-- **Landlord Ledger**: Maintain a detailed ledger of all transactions, leases, and tenant communications in one secure place.
+- **Real-Time Property Valuation & Predictive Analytics**: Instantly view up-to-date estimates of your property values and equity using integrated market data and predictive trends.
+- **Component Age Tracking & Maintenance Alerts**: Monitor property components (e.g., roofs, HVAC) and receive proactive alerts to prevent costly repairs. Integrates with local service providers and smart home devices (planned).
+- **Receipt & Expense Management with OCR & Tax Optimization**: Upload receipts, extract details automatically, and receive AI-driven tax deduction suggestions. Export reports and integrate with tax software (TurboTax, etc.).
+- **Basic Listing Creation**: Quickly generate listing templates for platforms like Zillow and Craigslist. Advanced marketing integrations and tenant screening are deprioritized to focus on core value.
+- **Rent Collection & Document Storage**: Collect rent online (Stripe/PayPal), store important documents, and receive renewal reminders. In-app messaging and maintenance request tracking are streamlined or linked to external tools.
+- **AI-Driven Investment Insights**: Personalized analytics on portfolio performance, cash flow, and ROI, with actionable advice (e.g., refinance, buy/sell/hold recommendations).
+- **Local Service Marketplace**: Connect with vetted local service providers for repairs and maintenance, earning discounts and streamlining property care (Pro tier).
 
 ## Target Users
-- Small landlords and property owners
-- Real estate investors with a small portfolio
-- Self-managing landlords seeking a digital solution
+- Small landlords and property owners (1–10 properties)
+- Real estate investors seeking efficiency, cost savings, and wealth growth
+- Self-managing landlords in Fargo-Moorhead, Omaha, Minneapolis, and similar markets
 
 ## Planned Technology Stack
 - **Frontend**: React (web), React Native (mobile)
 - **Backend**: Python/Django (modular apps: financials, properties, tenants, receipts, users)
 - **Database**: PostgreSQL
 - **Cloud Storage**: AWS S3 or similar for receipt/document management
-- **Integrations**: Real estate APIs for valuation, accounting APIs for financial tools
+- **Integrations**: Real estate APIs for valuation, accounting APIs, tax software, local service providers
 
 ## Roadmap
-1. **MVP**: Core ledger, financial tracking, and receipt management
-    - Set up Django backend and PostgreSQL integration
-    - Scaffold modular Django apps: properties, tenants, financials, receipts, users (all created and registered)
-    - Implement REST API endpoints for CRUD operations (planned)
-    - Design and implement models for Account, Transaction, Category, Property, Tenant, Receipt, UserProfile (all created)
-    - Enable file upload and storage for receipts (with custom file naming based on transaction and tenant)
-    - Basic admin interface for data management (all models registered)
-2. **Valuation Integration**: Real-time property value estimates
-    - Integrate with real estate APIs for property valuation
-    - Display valuation data in dashboard and reports
-3. **Marketing Tools**: Listing syndication and lead management
-    - Build listing creation and syndication features
-    - Lead capture and management workflows
-4. **Mobile App**: Native app for on-the-go management
-    - Develop React Native app for iOS/Android
-    - Mobile access to core features (ledger, financials, receipts)
-5. **Advanced Financial Tracking**
-    - Recurring transactions (e.g., monthly rent)
-    - Financial reporting (profit & loss, cash flow, balance sheet)
-    - Tax preparation tools and export
-    - Bank account and credit card integration for transaction import
-    - Attach receipts to transactions
-    - Document scanning and OCR for auto-uploading relevant data directly into the database (e.g., scan receipts/invoices and auto-populate transaction fields)
-6. **Deployment & Containerization**
-    - Provide Dockerfiles, docker-compose.yml, and Kubernetes manifests
-    - Documentation for self-hosting and cloud deployment
+1. **MVP**: Core valuation, maintenance alerts, receipt/OCR, rent collection, document storage, basic listing
+2. **AI-Driven Insights**: Portfolio analytics, ROI/cash flow advice, predictive trends
+3. **Tax Optimization Tool**: Deduction suggestions, tax software integration, landlord tax guides
+4. **Local Service Marketplace**: Provider listings, booking interface, commission system
+5. **Mobile App**: React Native app for on-the-go management
+6. **Deployment & Containerization**: Docker, Kubernetes manifests, cloud/self-hosting docs
 
-## Combined Feature Vision: Inspired by AppFolio & QuickBooks
-
-REALM is designed to bring together the best of property management (like AppFolio) and accounting (like Intuit QuickBooks) into a single, seamless platform for small landlords.
-
-### Property Management Features (AppFolio-inspired)
-- Online rent collection and payment tracking
-- Tenant and lease management (applications, screening, renewals)
-- Maintenance request tracking and vendor management
-- Vacancy marketing and listing syndication
-- Owner and tenant portals for communication and document sharing
-- Automated late fees, reminders, and reporting
-- Accounting tools tailored for property management (bank reconciliation, trust accounting)
-
-### Accounting Features (QuickBooks-inspired)
-- Comprehensive income and expense tracking
-- Invoicing, billing, and payment processing
-- Bank account and credit card integration for automatic transaction import
-- Financial reporting (profit & loss, balance sheet, cash flow)
-- Receipt capture and document management
-- Tax preparation tools and integration with tax filing services
-- Payroll management (planned for future versions)
-
-### The REALM Advantage
-By combining these features, REALM offers:
-- End-to-end property and tenant management
-- Automated, accurate financial tracking and reporting
-- Streamlined rent collection and expense management
-- Integrated receipt/document storage for tax and audit readiness
-- Marketing and communication tools for landlords and tenants
-- A single dashboard for all property, financial, and compliance needs
-
-## Deployment & Containerization
-
-REALM is being developed with modern deployment in mind. The application will be fully containerized, allowing small landlords and property managers to easily deploy and run the platform using Docker or Kubernetes (K8s). This ensures:
-
-- **Easy Setup**: Launch the entire stack with a single command using Docker Compose or Kubernetes manifests.
-- **Portability**: Run REALM on any cloud provider, on-premises server, or even a local machine.
-- **Scalability**: Effortlessly scale services as your portfolio grows.
-- **Security**: Isolate services and manage secrets securely.
-
-Deployment resources (Dockerfiles, docker-compose.yml, and K8s manifests) will be provided as the project matures.
+## Competitive Advantage
+CARAT is not just a management tool—it’s a wealth-building partner. By focusing on actionable insights, tax savings, and repair efficiency, CARAT stands apart from Stessa, RentRedi, and AppFolio, offering features tailored to small investors’ real needs.
 
 ## Development Timeline & Person Hours
 
-As a solo developer, the following are estimated person hours and timeline for each major phase, assuming 5-10 hours per week of development:
+| Phase                                 | Estimated Hours | Estimated Duration |
+|----------------------------------------|-----------------|-------------------|
+| MVP (Core features)                    | 80              | 2-4 months        |
+| AI-Driven Insights                     | 30              | 1-2 months        |
+| Tax Optimization Tool                  | 40              | 1-2 months        |
+| Local Service Marketplace              | 50              | 1-2 months        |
+| Mobile App (Core features)             | 60              | 2-3 months        |
+| Deployment & Containerization          | 20              | 2-3 weeks         |
+| **Total**                              | **280**         | **8-14 months**   |
 
-| Phase                              | Estimated Hours | Estimated Duration |
-|-------------------------------------|-----------------|-------------------|
-| MVP (Core ledger, financials, receipts) | 80              | 2-4 months        |
-| Valuation Integration               | 30              | 1-2 months        |
-| Marketing Tools                     | 40              | 1-2 months        |
-| Mobile App (Core features)          | 60              | 2-3 months        |
-| Advanced Financial Tracking         | 50              | 1-2 months        |
-| Deployment & Containerization       | 20              | 2-3 weeks         |
-| **Total**                           | **280**         | **8-14 months**   |
-
-> **Note:** These are rough estimates and actual time may vary based on feature complexity, learning curve, and unforeseen challenges. Timelines assume part-time development (5-10 hours/week). Increasing weekly hours will reduce the overall duration.
+> **Note:** These are rough estimates and actual time may vary based on feature complexity, learning curve, and unforeseen challenges. Timelines assume part-time development (5-10 hours/week).
 
 ## Abbreviations & Meanings
 
@@ -121,10 +62,41 @@ As a solo developer, the following are estimated person hours and timeline for e
 - **API**: Application Programming Interface – A set of rules that allows different software entities to communicate with each other.
 - **UI**: User Interface – The space where interactions between humans and machines occur.
 - **AWS S3**: Amazon Web Services Simple Storage Service – A scalable object storage service used for storing and retrieving data.
+- **FOSS**: Free and Open Source Software
 
 ## Getting Started
 *Instructions for setup and contribution will be added as development begins.*
 
+## Self-Hosting & Deployment
+
+CARET is designed as a fully containerized solution. You can deploy and run CARET on your own hardware or cloud infrastructure for free, at your own risk. All core features are available for self-hosted users, and you retain full control over your data and environment.
+
+- **Containerized Deployment:**
+  - Docker and Kubernetes manifests will be provided for easy setup.
+  - Documentation will guide you through installation, configuration, and updates.
+  - Community support is available for troubleshooting and best practices.
+
+## Optional Managed Hosting & Premium Insights
+
+For users who prefer a hassle-free experience or want access to advanced features, CARET will offer an optional managed hosting service:
+
+- **Managed Hosting:**
+  - We handle deployment, security, backups, and updates.
+  - Hosted in secure, scalable cloud environments.
+- **Premium Insights & Services:**
+  - Access to advanced AI-driven analytics, professional advice, and exclusive integrations.
+  - Additional features may include tax optimization, market trend predictions, and expert support.
+
+Self-hosted users are always free to migrate to managed hosting at any time, and vice versa.
+
+## Development Plan
+
+For a detailed, step-by-step development plan and technical roadmap, see the [DevPlan.md](DevPlan.md) document in this repository.
+
+## License
+
+This project is licensed under the GNU General Public License v3.0 (GPLv3). See the [LICENSE](LICENSE) file for details.
+
 ---
 
-*REALM aims to empower small landlords with the tools they need to manage, grow, and optimize their real estate investments.*
+*CARET empowers small landlords and investors to manage, grow, and optimize their real estate portfolios with confidence.*
