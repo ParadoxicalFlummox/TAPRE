@@ -1,5 +1,7 @@
 # CARET: Charlie & Adam's Real Estate Toolkit
 
+*CARET Project is authored and developed by Adam Roy, and contributors. Idea and marketing is provided by Charlie Erickson, and contributors.*
+
 CARET is an all-in-one real estate toolkit designed for small real estate investors and landlords. The mission is to maximize ROI, simplify operations, and empower users to grow their wealth with actionable insights, tax optimization, and seamless property management.
 
 ## Key Features
