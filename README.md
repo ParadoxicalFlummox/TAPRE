@@ -1,8 +1,32 @@
-# CARET: Charlie & Adam's Real Estate Toolkit
+# TAPRE: Tracking & Analytics Platform for Real Estate
 
-*CARET Project is authored and developed by Adam Roy, and contributors. Idea and marketing is provided by Charlie Erickson, and contributors.*
+## MVP Focus: Property Investment Tracker
 
-CARET is an all-in-one real estate toolkit designed for small real estate investors and landlords. The mission is to maximize ROI, simplify operations, and empower users to grow their wealth with actionable insights, tax optimization, and seamless property management.
+TAPRE's initial release is focused on being a powerful investment tracker for rental properties. The goal is to help investors get a clear view of how their properties are performing, compare rents to the market, and receive actionable advice to optimize returns. Advanced features (valuation, component tracking, tax write-off advice, etc.) will be added as future upgrades.
+
+### Core Features (Phase 1)
+- **User Authentication:** Secure login and registration.
+- **Property Management:** Add, edit, and remove rental properties.
+- **Investment Tracking:** 
+  - Track purchase price, mortgage, expenses, income, and cash flow for each property.
+  - Calculate and display key metrics (ROI, cash-on-cash return, cap rate, etc.).
+- **Performance Dashboard:** 
+  - Visualize property performance over time.
+  - Highlight underperforming properties.
+- **Rent Comparison:** 
+  - Compare user’s rent to market averages (via integration or manual input).
+  - Provide suggestions for rent optimization.
+- **Advice & Insights:** 
+  - Show actionable tips to improve property performance (e.g., raise rent, reduce expenses).
+
+### Future Add-ons (Phase 2+)
+- **Valuation Tracking:** Automated or manual property value updates.
+- **Component Tracking:** Track appliances, renovations, and their depreciation.
+- **Tax Write-off Advice:** Personalized tax optimization tips.
+- **Premium Analytics:** Advanced reporting, AI-driven insights, benchmarking.
+- **Professional Advice:** Connect with experts for personalized recommendations.
+
+TAPRE is an all-in-one real estate toolkit designed for small real estate investors and landlords. The mission is to maximize ROI, simplify operations, and empower users to grow their wealth with actionable insights, tax optimization, and seamless property management.
 
 ## Key Features
 
@@ -35,7 +59,7 @@ CARET is an all-in-one real estate toolkit designed for small real estate invest
 6. **Deployment & Containerization**: Docker, Kubernetes manifests, cloud/self-hosting docs
 
 ## Competitive Advantage
-CARAT is not just a management tool—it’s a wealth-building partner. By focusing on actionable insights, tax savings, and repair efficiency, CARAT stands apart from Stessa, RentRedi, and AppFolio, offering features tailored to small investors’ real needs.
+TAPRE is not just a management tool—it’s a wealth-building partner. By focusing on actionable insights, tax savings, and repair efficiency, TAPRE stands apart from Stessa, RentRedi, and AppFolio, offering features tailored to small investors’ real needs.
 
 ## Development Timeline & Person Hours
 
@@ -71,7 +95,7 @@ CARAT is not just a management tool—it’s a wealth-building partner. By focus
 
 ## Self-Hosting & Deployment
 
-CARET is designed as a fully containerized solution. You can deploy and run CARET on your own hardware or cloud infrastructure for free, at your own risk. All core features are available for self-hosted users, and you retain full control over your data and environment.
+TAPRE is designed as a fully containerized solution. You can deploy and run TAPRE on your own hardware or cloud infrastructure for free, at your own risk. All core features are available for self-hosted users, and you retain full control over your data and environment.
 
 - **Containerized Deployment:**
   - Docker and Kubernetes manifests will be provided for easy setup.
@@ -80,7 +104,7 @@ CARET is designed as a fully containerized solution. You can deploy and run CARE
 
 ## Optional Managed Hosting & Premium Insights
 
-For users who prefer a hassle-free experience or want access to advanced features, CARET will offer an optional managed hosting service:
+For users who prefer a hassle-free experience or want access to advanced features, TAPRE will offer an optional managed hosting service:
 
 - **Managed Hosting:**
   - We handle deployment, security, backups, and updates.
@@ -101,4 +125,13 @@ This project is licensed under the GNU General Public License v3.0 (GPLv3). See 
 
 ---
 
-*CARET empowers small landlords and investors to manage, grow, and optimize their real estate portfolios with confidence.*
+*TAPRE empowers small landlords and investors to manage, grow, and optimize their real estate portfolios with confidence.*
+
+## The TAPRE Project is a community-driven effort. Contributions, feedback, and suggestions are welcome! Join us in building a powerful tool for real estate investors.
+## Development & Contribution
+
+### Software Development
+Adam Roy (Creator, Lead Developer)
+
+### Marketing & Community
+Charlie Erikson (Marketing Lead, Community Manager)
