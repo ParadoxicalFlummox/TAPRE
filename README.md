@@ -2,6 +2,32 @@
 
 *CARET Project is authored and developed by Adam Roy, and contributors. Idea and marketing is provided by Charlie Erickson, and contributors.*
 
+## MVP Focus: Property Investment Tracker
+
+CARET's initial release is focused on being a powerful investment tracker for rental properties. The goal is to help investors get a clear view of how their properties are performing, compare rents to the market, and receive actionable advice to optimize returns. Advanced features (valuation, component tracking, tax write-off advice, etc.) will be added as future upgrades.
+
+### Core Features (Phase 1)
+- **User Authentication:** Secure login and registration.
+- **Property Management:** Add, edit, and remove rental properties.
+- **Investment Tracking:** 
+  - Track purchase price, mortgage, expenses, income, and cash flow for each property.
+  - Calculate and display key metrics (ROI, cash-on-cash return, cap rate, etc.).
+- **Performance Dashboard:** 
+  - Visualize property performance over time.
+  - Highlight underperforming properties.
+- **Rent Comparison:** 
+  - Compare user’s rent to market averages (via integration or manual input).
+  - Provide suggestions for rent optimization.
+- **Advice & Insights:** 
+  - Show actionable tips to improve property performance (e.g., raise rent, reduce expenses).
+
+### Future Add-ons (Phase 2+)
+- **Valuation Tracking:** Automated or manual property value updates.
+- **Component Tracking:** Track appliances, renovations, and their depreciation.
+- **Tax Write-off Advice:** Personalized tax optimization tips.
+- **Premium Analytics:** Advanced reporting, AI-driven insights, benchmarking.
+- **Professional Advice:** Connect with experts for personalized recommendations.
+
 CARET is an all-in-one real estate toolkit designed for small real estate investors and landlords. The mission is to maximize ROI, simplify operations, and empower users to grow their wealth with actionable insights, tax optimization, and seamless property management.
 
 ## Key Features

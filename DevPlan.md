@@ -1,3 +1,31 @@
+# CARET Requirements & MVP Focus
+
+## MVP: Property Investment Tracker
+
+### Core Features (Phase 1)
+- **User Authentication:** Secure login and registration.
+- **Property Management:** Add, edit, and remove rental properties.
+- **Investment Tracking:** 
+  - Track purchase price, mortgage, expenses, income, and cash flow for each property.
+  - Calculate and display key metrics (ROI, cash-on-cash return, cap rate, etc.).
+- **Performance Dashboard:** 
+  - Visualize property performance over time.
+  - Highlight underperforming properties.
+- **Rent Comparison:** 
+  - Compare user’s rent to market averages (via integration or manual input).
+  - Provide suggestions for rent optimization.
+- **Advice & Insights:** 
+  - Show actionable tips to improve property performance (e.g., raise rent, reduce expenses).
+
+### Future Add-ons (Phase 2+)
+- **Valuation Tracking:** Automated or manual property value updates.
+- **Component Tracking:** Track appliances, renovations, and their depreciation.
+- **Tax Write-off Advice:** Personalized tax optimization tips.
+- **Premium Analytics:** Advanced reporting, AI-driven insights, benchmarking.
+- **Professional Advice:** Connect with experts for personalized recommendations.
+
+---
+
 # CARET Development Plan & Timeline
 
 ## 1. Project Architecture & Planning
@@ -99,6 +127,66 @@ This architecture allows for:
 
 ---
 
+## 9. User Interaction Flow (React ↔ Django)
+
+### Typical Modern Flow
+
+1. **User fills out a form in React**
+   - Example: Registration, login, or CRUD action.
+2. **React sends HTTP request to Django REST API**
+   - Uses fetch/axios to send data to endpoints (e.g., `/api/register/`, `/api/login/`, `/api/properties/`).
+3. **Django receives request and processes it**
+   - Validates/authenticates input.
+   - Performs business logic and interacts with the database.
+4. **Django returns a JSON response**
+   - Contains success, error, or requested data.
+5. **React processes the response**
+   - Updates UI, stores tokens (for authentication), displays errors, or redirects as needed.
+
+#### Authentication Patterns
+- **Token-based (recommended):**
+  - Django issues a JWT or similar token on login.
+  - React stores the token (localStorage/cookies) and sends it with each request (usually in the Authorization header).
+
+#### CRUD Operations
+- React sends GET/POST/PUT/DELETE requests to Django endpoints.
+- Django checks authentication, performs DB operations, and returns results as JSON.
+
+---
+
+### Example: User Registration (Token-based)
+
+```
+// React (frontend)
+function handleRegister(formData) {
+    fetch('/api/register/', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Redirect to login or dashboard
+        } else {
+            // Show error messages
+        }
+    });
+}
+
+// Django (backend)
+@api_view(['POST'])
+def register(request):
+    data = request.data
+    # Validate data
+    # Create user
+    # Return response (success/error)
+```
+
+_Repeat similar structure for login, CRUD, and logout._
+
+---
+
 ## Timeline
 
 | Phase                        | Duration         |
@@ -114,8 +202,3 @@ This architecture allows for:
 | **Total**                    | **10–13 weeks**  |
 
 ---
-
-**Notes:**
-- Adjust durations based on team size and experience.
-- Parallelize tasks where possible (e.g., documentation during development).
-- Review and iterate on architecture as requirements evolve.
