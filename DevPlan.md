@@ -1,10 +1,12 @@
-# CARET Requirements & MVP Focus
+# TAPRE Requirements & MVP Focus
 
 ## MVP: Property Investment Tracker
 
 ### Core Features (Phase 1)
 - **User Authentication:** Secure login and registration.
+  - Uses JWT or session-based authentication.
 - **Property Management:** Add, edit, and remove rental properties.
+  - CRUD operations for properties with details like address, purchase price, mortgage info, etc.
 - **Investment Tracking:** 
   - Track purchase price, mortgage, expenses, income, and cash flow for each property.
   - Calculate and display key metrics (ROI, cash-on-cash return, cap rate, etc.).
@@ -14,6 +16,7 @@
 - **Rent Comparison:** 
   - Compare user’s rent to market averages (via integration or manual input).
   - Provide suggestions for rent optimization.
+  - Calculate profit margin and compare it to market standards.
 - **Advice & Insights:** 
   - Show actionable tips to improve property performance (e.g., raise rent, reduce expenses).
 
@@ -26,7 +29,7 @@
 
 ---
 
-# CARET Development Plan & Timeline
+# TAPRE Development Plan & Timeline
 
 ## 1. Project Architecture & Planning
 - Define core components: frontend (React), backend (Django), database (PostgreSQL), and optional services (Redis, Celery, AI microservices).
@@ -36,8 +39,14 @@
 **Duration:** 1 week
 
 ### Core Components
-- **Frontend: React** – The user interface for CARET will be built using React, a modern JavaScript library for building scalable and responsive web applications. Users will interact with all features (property management, analytics, reporting, etc.) through this web-based UI, which communicates securely with the backend via REST APIs.
-- **Backend: Django** – The backend will be developed with Django, a robust Python web framework. Django will handle all business logic, user authentication, API endpoints, and integration with external services (e.g., real estate APIs, payment gateways). It will serve as the central hub connecting the frontend, database, and any background services.
+- **Frontend: React** – The user interface for TAPRE will be built using React, a modern JavaScript library for building scalable and responsive web applications. Users will interact with all features (property management, analytics, reporting, etc.) through this web-based UI, which communicates securely with the backend via REST APIs.
+- **Backend: Django** – The backend will be developed with Django, a robust Python web framework. Django will handle all business logic, user authentication, API endpoints, and integration with external services (e.g., real estate APIs, payment gateways). It will serve as the central hub connecting the frontend, database, and any background services. The framework will be as follows:
+  - Finances: `Account`, `Transaction`, `Expense`, `Income`, `Mortgage`
+  - Properties: `BuildDate` `Address`, `City`, `State`, `Zip`, `Country`, `Type`, `Size`, `PurchasePrice`, `CurrentValue`
+  - Tenants: `Name`, `Email`, `Phone`, `LeaseStart`, `LeaseEnd`, `Property`, `Deposit`, `RentAmount`
+  - Reciepts: `Date`, `Amount`, `Category`, `Property`, `Tenant`
+  - Users: `Username`, `Email`, `Password`, `Role`
+  - Documents: `FileName`, `FileType`, `UploadDate`, `Property`, `Tenant`
 - **Database: PostgreSQL** – PostgreSQL will be used as the primary data store. It is an open-source, enterprise-grade relational database system that supports advanced SQL features and ensures data integrity. All persistent data—such as user accounts, property records, transactions, and analytics—will be stored here. The backend will interact with PostgreSQL using Django’s ORM, and the database will be containerized for portability and easy backup.
 
 **How these components work together:**
