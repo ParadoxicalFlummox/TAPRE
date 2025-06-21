@@ -93,6 +93,22 @@ TAPRE is not just a management tool—it’s a wealth-building partner. By focus
 ## Getting Started
 *Instructions for setup and contribution will be added as development begins.*
 
+### Default Admin Credentials (First-Time Setup)
+
+When you first run TAPRE, a default admin user is created for initial configuration:
+
+- **Username:** admin
+- **Password:** admin123
+- **Email:** admin@example.com
+
+> ⚠️ **Security Warning:**
+> After your first login, you must change the default admin password and email to secure your installation. Leaving the default credentials unchanged is a serious security risk.
+
+You can override these credentials by setting the following environment variables in your deployment:
+- `DJANGO_SUPERUSER_USERNAME`
+- `DJANGO_SUPERUSER_PASSWORD`
+- `DJANGO_SUPERUSER_EMAIL`
+
 ## Self-Hosting & Deployment
 
 TAPRE is designed as a fully containerized solution. You can deploy and run TAPRE on your own hardware or cloud infrastructure for free, at your own risk. All core features are available for self-hosted users, and you retain full control over your data and environment.
