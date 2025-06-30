@@ -1,6 +1,85 @@
 # TAPRE: Tracking & Analytics Platform for Real Estate
 
-## MVP Focus: Property Investment Tracker
+## Project Tech Stack Decision and Architecture Overview
+
+### 1. Chosen Tech Stack
+
+- **Frontend:** Vue.js  
+  - Open source, community-driven, approachable, and flexible.
+- **Backend:** Go (Gin)  
+  - Minimal, performant, and lets you build your stack your way.
+- **Database:** PostgreSQL  
+  - Robust, scalable, and ideal for structured data.
+
+---
+
+### 2. Rationale and Comparisons
+
+#### Frontend Frameworks
+
+| Framework | License | Led by         | Community Governance | Language      | File Type     | Learning Curve | Notable          |
+|-----------|---------|----------------|---------------------|---------------|---------------|----------------|------------------|
+| React     | MIT     | Meta (Facebook)| Limited             | JS/TS + JSX   | .js/.tsx      | Moderate       | Most popular     |
+| Angular   | MIT     | Google         | Limited             | TypeScript    | .ts/.html     | Hard           | Enterprise       |
+| **Vue.js**| MIT     | Community      | Open/Active         | JS/TS         | .vue          | Easy           | Very popular     |
+| Svelte    | MIT     | Community      | Open/Active         | JS/TS         | .svelte       | Easiest        | Fast-growing     |
+
+- All use JavaScript/TypeScript, but Vue.js stands out for openness and ease of use.
+- Vue.js uses single file components (`.vue`), splitting template, logic, and style.
+
+#### Backend in Go (Gin)
+
+- **Gin** is lightweight, expressive, and very popular in the Go ecosystem.
+- Gives you routing, middleware, and JSON handling—but you assemble your own architecture (ORM, sessions, etc.).
+- Perfect for containerization (Docker/Kubernetes).
+
+##### Gin vs. Echo
+
+| Feature      | Gin                       | Echo                      |
+|--------------|---------------------------|---------------------------|
+| API          | Minimal, expressive       | More features out of box  |
+| Performance  | Extremely fast            | Extremely fast            |
+| Middleware   | Large ecosystem           | Many built-in             |
+| Documentation| Clear, extensive          | Good                      |
+| Community    | Very active               | Active                    |
+
+- Gin is often chosen for its elegance and popularity; Echo for its all-in-one approach.
+- Both are suitable, but Gin is recommended if you prefer its style.
+
+---
+
+### 3. Typical App Architecture
+
+```
+User (Browser/App)
+   |
+   v
+Frontend (Vue.js)
+   |
+   v
+REST API (Go + Gin)
+   |
+   v
+PostgreSQL Database
+```
+
+#### Example Workflow
+
+- **User registers:** Vue.js app sends POST to `/api/signup`, Gin handles validation and writes to PostgreSQL.
+- **User logs in:** Receives a JWT for future authenticated requests.
+- **CRUD actions:** Vue.js calls REST endpoints for tasks, Gin talks to PostgreSQL.
+
+---
+
+### 4. Summary
+
+- **Vue.js + Gin + PostgreSQL** is a highly open, flexible, and modern stack.
+- Each layer is container-friendly and widely supported.
+- You have control over each part, with a welcoming learning curve and vibrant communities.
+
+---
+
+# TAPRE MVP Focus: Property Investment Tracker
 
 TAPRE's initial release is focused on being a powerful investment tracker for rental properties. The goal is to help investors get a clear view of how their properties are performing, compare rents to the market, and receive actionable advice to optimize returns. Advanced features (valuation, component tracking, tax write-off advice, etc.) will be added as future upgrades.
 
@@ -41,22 +120,20 @@ TAPRE is an all-in-one real estate toolkit designed for small real estate invest
 ## Target Users
 - Small landlords and property owners (1–10 properties)
 - Real estate investors seeking efficiency, cost savings, and wealth growth
-- Self-managing landlords in Fargo-Moorhead, Omaha, Minneapolis, and similar markets
 
 ## Planned Technology Stack
-- **Frontend**: React (web), React Native (mobile)
-- **Backend**: Python/Django (modular apps: financials, properties, tenants, receipts, users)
+- **Frontend**: Vue.js
+- **Backend**: Go (Gin)
 - **Database**: PostgreSQL
-- **Cloud Storage**: AWS S3 or similar for receipt/document management
 - **Integrations**: Real estate APIs for valuation, accounting APIs, tax software, local service providers
 
 ## Roadmap
 1. **MVP**: Core valuation, maintenance alerts, receipt/OCR, rent collection, document storage, basic listing
-2. **AI-Driven Insights**: Portfolio analytics, ROI/cash flow advice, predictive trends
-3. **Tax Optimization Tool**: Deduction suggestions, tax software integration, landlord tax guides
-4. **Local Service Marketplace**: Provider listings, booking interface, commission system
-5. **Mobile App**: React Native app for on-the-go management
-6. **Deployment & Containerization**: Docker, Kubernetes manifests, cloud/self-hosting docs
+2. **Deployment & Containerization**: Docker, Kubernetes manifests, cloud/self-hosting docs
+3. **Financial Optimization Tools**: Tax optimization, deduction suggestions, tax software integration, landlord tax guides
+4. **Mobile App**: React Native app for on-the-go management
+5. **AI-Driven Insights**: Portfolio analytics, ROI/cash flow advice, predictive trends, advanced analytics
+6. **Local Service Marketplace**: Provider listings, booking interface, commission system
 
 ## Competitive Advantage
 TAPRE is not just a management tool—it’s a wealth-building partner. By focusing on actionable insights, tax savings, and repair efficiency, TAPRE stands apart from Stessa, RentRedi, and AppFolio, offering features tailored to small investors’ real needs.
@@ -66,14 +143,14 @@ TAPRE is not just a management tool—it’s a wealth-building partner. By focus
 | Phase                                 | Estimated Hours | Estimated Duration |
 |----------------------------------------|-----------------|-------------------|
 | MVP (Core features)                    | 80              | 2-4 months        |
-| AI-Driven Insights                     | 30              | 1-2 months        |
-| Tax Optimization Tool                  | 40              | 1-2 months        |
-| Local Service Marketplace              | 50              | 1-2 months        |
-| Mobile App (Core features)             | 60              | 2-3 months        |
 | Deployment & Containerization          | 20              | 2-3 weeks         |
-| **Total**                              | **280**         | **8-14 months**   |
+| Financial Optimization Tools           | 40              | 1-2 months        |
+| Mobile App (Core features)             | 60              | 2-3 months        |
+| AI-Driven Insights                     | 30              | 1-2 months        |
+| Local Service Marketplace              | 50              | 1-2 months        |
+| **Total**                              | **280**         | **10-22 months**   |
 
-> **Note:** These are rough estimates and actual time may vary based on feature complexity, learning curve, and unforeseen challenges. Timelines assume part-time development (5-10 hours/week).
+> **Note:** These are rough estimates and actual time may vary based on feature complexity, learning curve, and unforeseen challenges. Timelines now assume part-time development (3-7 hours/week).
 
 ## Abbreviations & Meanings
 
@@ -87,7 +164,6 @@ TAPRE is not just a management tool—it’s a wealth-building partner. By focus
 - **DB**: Database – An organized collection of structured information or data, typically stored electronically.
 - **API**: Application Programming Interface – A set of rules that allows different software entities to communicate with each other.
 - **UI**: User Interface – The space where interactions between humans and machines occur.
-- **AWS S3**: Amazon Web Services Simple Storage Service – A scalable object storage service used for storing and retrieving data.
 - **FOSS**: Free and Open Source Software
 
 ## Getting Started
@@ -103,11 +179,6 @@ When you first run TAPRE, a default admin user is created for initial configurat
 
 > ⚠️ **Security Warning:**
 > After your first login, you must change the default admin password and email to secure your installation. Leaving the default credentials unchanged is a serious security risk.
-
-You can override these credentials by setting the following environment variables in your deployment:
-- `DJANGO_SUPERUSER_USERNAME`
-- `DJANGO_SUPERUSER_PASSWORD`
-- `DJANGO_SUPERUSER_EMAIL`
 
 ## Self-Hosting & Deployment
 
